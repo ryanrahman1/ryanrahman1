@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas Courses</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .course {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+      background-color: #f9f9f9;
+    }
+    .course h2 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+    .course p {
+      margin: 4px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your Canvas Courses</h1>
+  <div id="courses-container">Loading courses...</div>
+
+  <script>
+    // Replace with your actual API key
+    const mySecret = 'YOUR_API_KEY';
+
+    // Fetch courses from the Canvas API
+    fetch('https://canvas.instructure.com/api/v1/users/self/favorites/courses', {
+      headers: {
+        Authorization: `Bearer ${mySecret}`,
+      },
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        const container = document.getElementById('courses-container');
+        container.innerHTML = ''; // Clear the loading text
+
+        if (data.length === 0) {
+          container.innerHTML = '<p>No favorite courses found.</p>';
+          return;
+        }
+
+        data.forEach(course => {
+          const courseElement = document.createElement('div');
+          courseElement.className = 'course';
+          courseElement.innerHTML = `
+            <h2>${course.name}</h2>
+            <p><strong>Course Code:</strong> ${course.course_code}</p>
+            <p><strong>Start Date:</strong> ${new Date(course.start_at).toLocaleDateString()}</p>
+            <p><strong>End Date:</strong> ${new Date(course.end_at).toLocaleDateString()}</p>
+            <p><strong>Time Zone:</strong> ${course.time_zone}</p>
+            <p><a href="${course.calendar.ics}" target="_blank">Download Calendar</a></p>
+          `;
+          container.appendChild(courseElement);
+        });
+      })
+      .catch(error => {
+        const container = document.getElementById('courses-container');
+        container.innerHTML = `<p>Error fetching courses: ${error.message}</p>`;
+      });
+  </script>
+</body>
+</html>
