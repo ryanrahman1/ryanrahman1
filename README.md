@@ -18,12 +18,12 @@
 
 <div align="left">
   <a href="https://www.instagram.com/ryanramenn/" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Instagram&logo=instagram&color=E4405F&style=for-the-badge" height="35"/>
+    <img src="https://img.shields.io/badge/Instagram-E4405F?logo=instagram&logoColor=white&style=for-the-badge" height="35"/>
   </a>
   <a href="https://www.linkedin.com/in/ryanrahman2/" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&color=0A66C2&style=for-the-badge" height="35"/>
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white&style=for-the-badge" height="35"/>
   </a>
   <a href="mailto:ryan.s.rahman2@gmail.com" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&color=D14836&style=for-the-badge" height="35"/>
+    <img src="https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white&style=for-the-badge" height="35"/>
   </a>
 </div>
