@@ -1,7 +1,7 @@
-<h2 align="left">Hi 👋! I'm Ryan</h2>
+<h2 align="left">Hi, I'm Ryan</h2>
 
 <p align="left">
-  I’m a 15-year-old developer with 5 years of experience. I build full-stack websites, mobile apps, and games using React Native, Swift, Node.js, Unity, and more.
+  I’m a 15-year-old developer with 5 years of experience.
 </p>
 
 ---
