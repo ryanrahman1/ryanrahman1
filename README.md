@@ -1,7 +1,7 @@
-<h2 align="left">Hi, I'm Ryan</h2>
+<h2 align="left">I'm Ryan</h2>
 
 <p align="left">
-  I’m a 15-year-old developer with 5 years of experience.
+  hello
 </p>
 
 ---
